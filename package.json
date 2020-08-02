@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "insta": "node insta.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,7 +25,11 @@
   },
   "homepage": "https://github.com/Legytma/Legytma_bot#readme",
   "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
     "dotenv": "^8.2.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
     "telegraf": "^3.38.0"
   }
 }
