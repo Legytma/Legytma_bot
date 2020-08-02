@@ -138,5 +138,6 @@ bot.catch((err, ctx) => {
 	
 }, 10000, 847486984);*/
 
+bot.telegram.setWebhook('https://legytma-bot.herokuapp.com/secret-path');
 bot.startWebhook('/secret-path', null, 5000);
-bot.launch();
+//bot.launch();
