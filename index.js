@@ -29,6 +29,7 @@ const insta = async () => {
     
     /* Get the proper script of the html page which contains the json */
     let script = $('script').eq(4).html();
+	console.log(script);
     
     /* Traverse through the JSON of instagram response */
     let { entry_data: { ProfilePage : {[0] : { graphql : {user} }} } } = JSON.parse(/window\._sharedData = (.+);/g.exec(script)[1]);
