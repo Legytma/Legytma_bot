@@ -1,0 +1,30 @@
+{
+  "name": "legytma_bot",
+  "version": "1.0.0",
+  "description": "Legytma Soluções Inteligentes (Bot)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Legytma/Legytma_bot.git"
+  },
+  "keywords": [
+    "Legytma",
+    "Telegram",
+    "Bot",
+    "Legytma_bot"
+  ],
+  "author": "Alex Manoel Ferreira Silva <alex@legytma.com.br> (Windol)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Legytma/Legytma_bot/issues"
+  },
+  "homepage": "https://github.com/Legytma/Legytma_bot#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "telegraf": "^3.38.0"
+  }
+}
