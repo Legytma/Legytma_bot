@@ -29,12 +29,14 @@ const insta = async () => {
     
 	var list = [];
 	$('script').each(function (index, element) {
-		list.push($(element).html());
+		if ($(element).html().includes('window._sharedData = ')) {
+			list.push($(element).html());
+		}
 	});
 	console.dir(list);
 	//console.log($('script').eq(2).html());
     /* Get the proper script of the html page which contains the json */
-    let script = $('script').eq(4).html();
+    let script = list[0]; //$('script').eq(4).html();
 	//console.log(script);
     
     /* Traverse through the JSON of instagram response */
