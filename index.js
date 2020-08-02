@@ -27,9 +27,15 @@ const insta = async () => {
     /* Initiate Cheerio with the response */
     let $ = cheerio.load(response);
     
+	var list = [];
+	$('script').each(function (index, element) {
+		list.push($(element).html());
+	});
+	console.dir(list);
+	//console.log($('script').eq(2).html());
     /* Get the proper script of the html page which contains the json */
     let script = $('script').eq(4).html();
-	console.log(script);
+	//console.log(script);
     
     /* Traverse through the JSON of instagram response */
     let { entry_data: { ProfilePage : {[0] : { graphql : {user} }} } } = JSON.parse(/window\._sharedData = (.+);/g.exec(script)[1]);
@@ -139,7 +145,16 @@ bot.catch((err, ctx) => {
 	
 }, 10000, 847486984);*/
 
-bot.telegram.setWebhook('https://legytma-bot.herokuapp.com/secret-path');
+const CLIENT = process.env.CLIENT;
+
+if (!CLIENT) {
+	bot.telegram.setWebhook('https://legytma-bot.herokuapp.com/secret-path');
+}
+
 const PORT = process.env.PORT || 5000;
 bot.startWebhook('/secret-path', null, PORT);
-//bot.launch();
+
+if (CLIENT) {
+	console.log('Starting client...');
+	bot.launch();
+}
